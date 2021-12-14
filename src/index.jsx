@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+import YoutubeApi from './service/youtubeApi';
+
+const youtubeApi = new YoutubeApi();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App youtubeApi={youtubeApi}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
