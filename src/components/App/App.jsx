@@ -17,8 +17,11 @@ function App({ youtubeApi }) {
     },
   ];
 
+  const query = "잇섭";
+
   useEffect(() => {
-    youtubeApi.getYoutubeList().then((youtubes) => setYoutubes(youtubes));
+    // youtubeApi.getMostPopular().then((youtubes) => setYoutubes(youtubes));
+    youtubeApi.search(query).then((youtubes) => setYoutubes(youtubes));
   }, [youtubeApi]);
 
   // console.log(youtubes);
