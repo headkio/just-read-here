@@ -2,10 +2,10 @@ import React from "react";
 import Category from "../Category/Category";
 import styles from "./CategoryList.module.css";
 
-const CategoryList = ({ categoryList }) => {
+const CategoryList = ({ categories }) => {
   return (
     <ul className={styles.categoryList}>
-      {categoryList.map((category) => (
+      {categories.map((category) => (
         <Category key={category.id} category={category} />
       ))}
     </ul>

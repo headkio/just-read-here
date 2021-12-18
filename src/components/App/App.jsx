@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CategoryList from "../CategoryList/CategoryList";
 import ContentList from "../ContentList/ContentList";
+import ChannelList from "../ChannelList/ChannelList";
 import styles from "./App.module.css";
 
 function App({ youtubeApi }) {
@@ -17,6 +18,17 @@ function App({ youtubeApi }) {
     },
   ];
 
+  const channels = [
+    {
+      id: 1,
+      name: "Youtube",
+    },
+    {
+      id: 2,
+      name: "Facebook",
+    },
+  ];
+
   const query = "잇섭";
 
   useEffect(() => {
@@ -28,7 +40,10 @@ function App({ youtubeApi }) {
 
   return (
     <div className={styles.container}>
-      <CategoryList categoryList={categories} />
+      <div className={styles.lnb}>
+        <CategoryList categories={categories} />
+        <ChannelList channels={channels} />
+      </div>
       <ContentList youtubes={youtubes} />
     </div>
   );
