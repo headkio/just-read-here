@@ -6,7 +6,9 @@ const ContentList = ({ youtubes }) => {
   return (
     <ul className={styles.contentList}>
       {youtubes.map((youtube) => (
-        <Youtube key={youtube.id.videoId} youtube={youtube} />
+        <li key={youtube.id.videoId} className={styles.contentItem}>
+          <Youtube youtube={youtube} />
+        </li>
       ))}
     </ul>
   );

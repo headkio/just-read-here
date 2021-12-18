@@ -1,4 +1,15 @@
 .contentList {
-  background-color: coral;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contentItem {
+  width: 50%;
+}
+
+@media screen and (max-width: 48rem) {
+  .contentItem {
+    width: 100%;
+  }
 }

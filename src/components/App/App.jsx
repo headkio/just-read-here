@@ -29,7 +29,7 @@ function App({ youtubeApi }) {
     },
   ];
 
-  const query = "잇섭";
+  const query = "프론트엔드|백엔드|개발자";
 
   useEffect(() => {
     // youtubeApi.getMostPopular().then((youtubes) => setYoutubes(youtubes));

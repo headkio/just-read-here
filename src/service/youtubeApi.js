@@ -30,6 +30,7 @@ class YoutubeApi {
           part: "snippet",
           type: "video",
           q: query,
+          maxResults: 25,
         },
       });
 
