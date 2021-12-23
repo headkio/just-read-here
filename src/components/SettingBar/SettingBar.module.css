@@ -1,0 +1,21 @@
+.settingbar {
+  background-color: #2e2e2e;
+  margin-top: 1rem;
+}
+
+.input {
+  width: 70%;
+  margin: 0.2em;
+}
+
+.keyword {
+  background-color: gray;
+  margin: 0.2em;
+  border-radius: 0.4em;
+  padding: 0.2em;
+  font-size: 0.8em;
+}
+
+.addBtn {
+  margin: 0.2em;
+}

@@ -1,49 +1,43 @@
 import { useEffect, useState } from "react";
-import CategoryList from "../CategoryList/CategoryList";
 import ContentList from "../ContentList/ContentList";
-import ChannelList from "../ChannelList/ChannelList";
+import SettingBar from "../SettingBar/SettingBar";
 import styles from "./App.module.css";
 
 function App({ youtubeApi }) {
   const [youtubes, setYoutubes] = useState([]);
 
-  const categories = [
+  const keywords = [
     {
       id: 1,
-      name: "IT",
+      name: "프론트엔드",
     },
     {
       id: 2,
-      name: "Game",
+      name: "백엔드",
+    },
+    {
+      id: 3,
+      name: "개발자",
+    },
+    {
+      id: 4,
+      name: "bts",
     },
   ];
 
-  const channels = [
-    {
-      id: 1,
-      name: "Youtube",
-    },
-    {
-      id: 2,
-      name: "Facebook",
-    },
-  ];
-
-  const query = "프론트엔드|백엔드|개발자";
+  const query = keywords
+    .map((category) => category.name) //
+    .join("|");
 
   useEffect(() => {
-    // youtubeApi.getMostPopular().then((youtubes) => setYoutubes(youtubes));
-    youtubeApi.search(query).then((youtubes) => setYoutubes(youtubes));
-  }, [youtubeApi]);
-
-  // console.log(youtubes);
+    youtubeApi
+      .search(query) //
+      .then((youtubes) => setYoutubes(youtubes));
+  }, [youtubeApi, query]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.lnb}>
-        <CategoryList categories={categories} />
-        <ChannelList channels={channels} />
-      </div>
+      <SettingBar keywords={keywords} />
       <ContentList youtubes={youtubes} />
     </div>
   );

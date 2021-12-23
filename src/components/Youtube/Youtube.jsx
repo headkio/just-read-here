@@ -10,6 +10,7 @@ const Youtube = ({ youtube }) => {
         src={`http://www.youtube.com/embed/${youtube.id.videoId}`}
         frameBorder="0"
         className={styles.player}
+        title={youtube.id.videoId}
       ></iframe>
       <div className={styles.info}>
         <p className={styles.title}>{youtube.snippet.title}</p>
